@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Donate a Computer Kenya - Bridging the digital divide in Kilifi County through computer donations and digital literacy programs">
+    <title>Donate a Computer | Bridging the Digital Divide in Kilifi, Kenya</title>
+    
+    <!-- Favicon (Tab Icon) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- External CSS File -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <!-- Wave Animation -->
+    <div class="wave-container">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <!-- Floating Icons -->
+        <div class="nav-icon">💻</div>
+        <div class="nav-icon">🎓</div>
+        <div class="nav-icon">🌍</div>
+        
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <!-- 
+                    TO ADD YOUR LOGO:
+                    1. Save your logo image in the same folder as this HTML file
+                    2. Name it "logo.png" (or .jpg, .svg)
+                    3. Uncomment the line below and update the filename
+                    4. Add class "active" to make it visible
+                -->
+                <!-- <img src="logo.png" alt="Donate a Computer Kenya Logo" class="logo-image active"> -->
+                <span>Donate a Computer</span>
+            </a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#mission">Our Mission</a></li>
+                <li><a href="#donate">Donate</a></li>
+                <li><a href="#stories">Our Stories</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Slideshow Section -->
+    <section class="hero-slideshow">
+        <div class="slideshow-container">
+            <!-- Slide 1 -->
+            <div class="slide active" onclick="goToStories()">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1920&q=80" alt="Students learning with computers">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h2>Empowering Education Through Technology</h2>
+                    <p>Bringing digital literacy to communities across Kilifi County</p>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="slide" onclick="goToStories()">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1920&q=80" alt="Community digital training">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h2>Building Digital Skills for Tomorrow</h2>
+                    <p>Training programs that transform lives and create opportunities</p>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="slide" onclick="goToStories()">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80" alt="Youth learning together">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h2>Creating Equal Opportunities</h2>
+                    <p>Every donation brings us closer to bridging the digital divide</p>
+                </div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="slide" onclick="goToStories()">
+                <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=1920&q=80" alt="Computer education">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h2>Technology Opens Doors</h2>
+                    <p>From basic computer skills to advanced digital competencies</p>
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button class="slide-nav prev" onclick="event.stopPropagation(); changeSlide(-1)">❮</button>
+            <button class="slide-nav next" onclick="event.stopPropagation(); changeSlide(1)">❯</button>
+
+            <!-- Dots -->
+            <div class="slide-dots">
+                <span class="dot active" onclick="event.stopPropagation(); currentSlide(0)"></span>
+                <span class="dot" onclick="event.stopPropagation(); currentSlide(1)"></span>
+                <span class="dot" onclick="event.stopPropagation(); currentSlide(2)"></span>
+                <span class="dot" onclick="event.stopPropagation(); currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Bridging the <span class="hero-highlight">Digital Divide</span> in Kilifi</h1>
+                <p>To equip underserved communities in Kenya with computers and digital skills that unlock opportunity, dignity, and economic independence.</p>
+                <div class="cta-buttons">
+                    <a href="#donate" class="btn btn-primary">Donate Now</a>
+                    <a href="#mission" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="computer-illustration">
+                    <div class="icon-display" id="iconDisplay">💻</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="impact-stats">
+            <div class="stat">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Students Reached</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">15</div>
+                <div class="stat-label">Schools Helped</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission">
+        <div class="section-header">
+            <h2>Our Mission</h2>
+            <p>Empowering communities through technology access and digital literacy</p>
+        </div>
+        
+        <div class="mission-grid">
+            <div class="mission-card">
+                <div class="mission-icon">🎯</div>
+                <h3>Computer Collection</h3>
+                <p>We collect donated computers from individuals, businesses, and organizations to give them a second life in underserved communities.</p>
+            </div>
+            
+            <div class="mission-card">
+                <div class="mission-icon">📚</div>
+                <h3>Digital Literacy Training</h3>
+                <p>We provide comprehensive training programs to help community members develop essential computer skills for the modern world.</p>
+            </div>
+            
+            <div class="mission-card">
+                <div class="mission-icon">🤝</div>
+                <h3>Community Partnership</h3>
+                <p>We partner with local schools, libraries, and community centers to ensure sustainable access to technology resources.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donate">
+        <div class="donation-section">
+            <div class="section-header">
+                <h2>How to Donate</h2>
+                <p>Every contribution helps bridge the digital divide</p>
+            </div>
+            
+            <div class="donation-grid">
+                <div class="donation-card">
+                    <h3>💻 Computer Equipment</h3>
+                    <p>We accept:</p>
+                    <ul>
+                        <li>✓ Desktop computers</li>
+                        <li>✓ Laptops and notebooks</li>
+                        <li>✓ Tablets and accessories</li>
+                        <li>✓ Monitors and keyboards</li>
+                        <li>✓ Computer mice and peripherals</li>
+                        <li>✓ Microphones and audio equipment</li>
+                        <li>✓ Raspberry Pi and similar devices</li>
+                        <li>✓ Educational software</li>
+                    </ul>
+                </div>
+                
+                <div class="donation-card">
+                    <h3>💰 Financial Support</h3>
+                    <p>Your monetary donations help us:</p>
+                    <ul>
+                        <li>✓ Refurbish donated equipment</li>
+                        <li>✓ Provide training materials</li>
+                        <li>✓ Cover operational costs</li>
+                        <li>✓ Expand our reach</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="margin-top: 2rem;">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stories & Gallery Section -->
+    <section id="stories">
+        <div class="stories-section">
+            <div class="section-header">
+                <h2>Our Stories</h2>
+                <p>Real impact in our community</p>
+            </div>
+            
+            <div class="stories-grid">
+                <!-- Story Card 1 - Template -->
+                <div class="story-card">
+                    <div class="story-image">📸</div>
+                    <div class="story-content">
+                        <div class="story-date">January 2026</div>
+                        <h3>First Computer Lab Opens</h3>
+                        <p>We successfully launched our first computer lab at Kilifi Primary School, providing 30 students with daily access to technology and digital learning resources.</p>
+                    </div>
+                </div>
+                
+                <!-- Story Card 2 - Template -->
+                <div class="story-card">
+                    <div class="story-image">📸</div>
+                    <div class="story-content">
+                        <div class="story-date">December 2025</div>
+                        <h3>Community Training Program</h3>
+                        <p>Our digital literacy program trained 50 community members in basic computer skills, word processing, and internet navigation.</p>
+                    </div>
+                </div>
+                
+                <!-- Story Card 3 - Template -->
+                <div class="story-card">
+                    <div class="story-image">📸</div>
+                    <div class="story-content">
+                        <div class="story-date">November 2025</div>
+                        <h3>Partnership Success</h3>
+                        <p>We partnered with local businesses to collect and refurbish 25 computers, giving them new life in our community centers.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Instructions for adding photos (HTML comment - not visible on website) -->
+            <!--
+                TO ADD YOUR OWN PHOTOS:
+                1. Save your photo in the same folder as this HTML file
+                2. Replace the story-image div content with an img tag:
+                   Change: <div class="story-image">📸</div>
+                   To: <img src="your-photo.jpg" alt="Description" class="story-image">
+                
+                TO ADD A NEW STORY:
+                Copy the entire story-card div (from <div class="story-card"> to </div>)
+                and paste it below the last story card. Then update:
+                - The story-date
+                - The h3 heading
+                - The paragraph text
+                - Add your photo following step 2 above
+            -->
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact">
+        <div class="impact-section">
+            <h2>Our Impact</h2>
+            <div class="impact-numbers">
+                <div class="impact-item">
+                    <div class="impact-number">500+</div>
+                    <div class="impact-label">Students Trained</div>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-number">15</div>
+                    <div class="impact-label">Schools Supported</div>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-number">100+</div>
+                    <div class="impact-label">Computers Donated</div>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-number">3</div>
+                    <div class="impact-label">Community Labs</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-section">
+            <div class="section-header">
+                <h2>Get in Touch</h2>
+                <p>We'd love to hear from you</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:donateacomputerke@gmail.com">donateacomputerke@gmail.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+254701711366">+254 701 711 366</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Kilifi County, Kenya</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">🌐</div>
+                        <div class="contact-details">
+                            <h4>Social Media</h4>
+                            <p>
+                                <a href="https://www.facebook.com/profile.php?id=61587792557646" target="_blank" rel="noopener noreferrer" style="margin-right: 1rem;">Facebook</a>
+                                <a href="https://www.instagram.com/donateacomputerke/" target="_blank" rel="noopener noreferrer" style="margin-right: 1rem;">Instagram</a>
+                                <a href="https://www.tiktok.com/@donateacomputerke?lang=en" target="_blank" rel="noopener noreferrer">TikTok</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form action="https://formspree.io/f/xlgwbpnd" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="_replyto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <input type="hidden" name="_subject" value="New message from Donate a Computer website">
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>Donate a Computer Kenya</h3>
+                <p>Bridging the digital divide in Kilifi County, one computer at a time.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#mission">Our Mission</a></li>
+                    <li><a href="#donate">Donate</a></li>
+                    <li><a href="#stories">Our Stories</a></li>
+                    <li><a href="#impact">Impact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.facebook.com/profile.php?id=61587792557646" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/donateacomputerke/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://www.tiktok.com/@donateacomputerke?lang=en" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Donate a Computer Kenya - Kilifi Coun
