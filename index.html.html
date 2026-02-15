@@ -1,0 +1,2549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Donate a Computer Kenya - Bridging the digital divide in Kilifi County through computer donations and digital literacy programs">
+    <title>Donate a Computer | Bridging the Digital Divide in Kilifi, Kenya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Prevent horizontal scroll */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Ensure images don't overflow */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Prevent text overflow */
+        * {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        :root {
+            --ocean-blue: #006B9F;
+            --deep-ocean: #004D73;
+            --sky-blue: #4A9FD8;
+            --coral: #FF6B6B;
+            --sunset-orange: #FF8C42;
+            --seafoam: #A8E6CF;
+            --sand: #FFE5B4;
+            --cream: #FFF9F0;
+            --ocean-grey: #5A7C8F;
+            --light-blue: #E8F4F8;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.7;
+            color: var(--deep-ocean);
+            background: var(--cream);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Background Elements */
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floating-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 107, 159, 0.03) 0%, transparent 70%);
+            animation: float-up 20s infinite ease-in-out;
+        }
+
+        .floating-circle:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+            animation-duration: 25s;
+        }
+
+        .floating-circle:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            right: 10%;
+            animation-delay: 5s;
+            animation-duration: 30s;
+        }
+
+        .floating-circle:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            bottom: 20%;
+            left: 15%;
+            animation-delay: 10s;
+            animation-duration: 20s;
+        }
+
+        .floating-circle:nth-child(4) {
+            width: 180px;
+            height: 180px;
+            top: 30%;
+            right: 25%;
+            animation-delay: 3s;
+            animation-duration: 28s;
+        }
+
+        .floating-circle:nth-child(5) {
+            width: 120px;
+            height: 120px;
+            bottom: 10%;
+            right: 5%;
+            animation-delay: 8s;
+            animation-duration: 22s;
+        }
+
+        @keyframes float-up {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.3;
+            }
+            25% {
+                transform: translate(20px, -30px) scale(1.1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(-15px, -60px) scale(0.9);
+                opacity: 0.4;
+            }
+            75% {
+                transform: translate(25px, -40px) scale(1.05);
+                opacity: 0.5;
+            }
+        }
+
+        /* Wave Animation at Bottom */
+        .wave-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 107, 159, 0.03) 100%);
+            animation: wave-motion 15s infinite linear;
+        }
+
+        .wave:nth-child(2) {
+            animation: wave-motion 20s infinite linear reverse;
+            opacity: 0.5;
+            background: linear-gradient(180deg, transparent 0%, rgba(74, 159, 216, 0.03) 100%);
+        }
+
+        .wave:nth-child(3) {
+            animation: wave-motion 25s infinite linear;
+            opacity: 0.3;
+            background: linear-gradient(180deg, transparent 0%, rgba(255, 107, 107, 0.02) 100%);
+        }
+
+        @keyframes wave-motion {
+            0% {
+                transform: translateX(0) translateZ(0) scaleY(1);
+            }
+            50% {
+                transform: translateX(-25%) translateZ(0) scaleY(0.8);
+            }
+            100% {
+                transform: translateX(-50%) translateZ(0) scaleY(1);
+            }
+        }
+
+        /* Particle Dots */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--sky-blue);
+            border-radius: 50%;
+            opacity: 0;
+            animation: particle-rise 8s infinite ease-in;
+        }
+
+        .particle:nth-child(6) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .particle:nth-child(7) {
+            left: 25%;
+            animation-delay: 2s;
+            animation-duration: 10s;
+        }
+
+        .particle:nth-child(8) {
+            left: 40%;
+            animation-delay: 4s;
+            animation-duration: 9s;
+        }
+
+        .particle:nth-child(9) {
+            left: 60%;
+            animation-delay: 1s;
+            animation-duration: 11s;
+        }
+
+        .particle:nth-child(10) {
+            left: 75%;
+            animation-delay: 3s;
+            animation-duration: 8s;
+        }
+
+        .particle:nth-child(11) {
+            left: 90%;
+            animation-delay: 5s;
+            animation-duration: 10s;
+        }
+
+        @keyframes particle-rise {
+            0% {
+                bottom: 0;
+                opacity: 0;
+                transform: translateY(0) scale(1);
+            }
+            10% {
+                opacity: 0.6;
+            }
+            50% {
+                opacity: 0.4;
+                transform: translateY(-50vh) scale(1.2);
+            }
+            100% {
+                bottom: 100%;
+                opacity: 0;
+                transform: translateY(-100vh) scale(0.5);
+            }
+        }
+
+        h1, h2, h3 {
+            font-family: 'Crimson Pro', serif;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--ocean-blue);
+        }
+
+        /* Navigation */
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(135deg, rgba(255, 248, 240, 0.98) 0%, rgba(245, 235, 224, 0.98) 50%, rgba(255, 248, 240, 0.98) 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite, slideDown 0.6s ease-out;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 3px solid var(--terracotta);
+            box-shadow: 0 4px 20px rgba(212, 117, 79, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Animated Morphing Blobs */
+        nav::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -5%;
+            width: 300px;
+            height: 300px;
+            background: rgba(212, 117, 79, 0.08);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: morphShape 10s ease-in-out infinite;
+        }
+
+        nav::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: 10%;
+            width: 250px;
+            height: 250px;
+            background: rgba(123, 143, 108, 0.08);
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            animation: morphShape 12s ease-in-out infinite reverse;
+        }
+
+        @keyframes morphShape {
+            0%, 100% {
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+                transform: rotate(0deg) scale(1);
+            }
+            25% {
+                border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+                transform: rotate(90deg) scale(1.1);
+            }
+            50% {
+                border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+                transform: rotate(180deg) scale(0.9);
+            }
+            75% {
+                border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+                transform: rotate(270deg) scale(1.05);
+            }
+        }
+
+        /* Floating Icons in Nav */
+        .nav-icon {
+            position: absolute;
+            color: rgba(212, 117, 79, 0.12);
+            font-size: 2rem;
+            animation: floatIcon 6s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .nav-icon:nth-child(1) {
+            top: 20%;
+            left: 15%;
+            animation-delay: 0s;
+        }
+
+        .nav-icon:nth-child(2) {
+            top: 60%;
+            right: 20%;
+            animation-delay: 2s;
+            animation-duration: 8s;
+        }
+
+        .nav-icon:nth-child(3) {
+            top: 40%;
+            left: 40%;
+            animation-delay: 4s;
+            animation-duration: 7s;
+        }
+
+        @keyframes floatIcon {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.12;
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 0.2;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--deep-orange);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .logo::before {
+            content: '💻';
+            font-size: 1.8rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .logo::after {
+            content: '🚀';
+            font-size: 1.6rem;
+            animation: rocket 3s ease-in-out infinite;
+            margin-left: 0.3rem;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes rocket {
+            0%, 100% {
+                transform: translateY(0) rotate(-10deg);
+            }
+            25% {
+                transform: translateY(-8px) rotate(-5deg);
+            }
+            50% {
+                transform: translateY(-3px) rotate(-15deg);
+            }
+            75% {
+                transform: translateY(-6px) rotate(0deg);
+            }
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+            display: none;
+        }
+
+        .logo-image.active {
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-links a {
+            color: var(--forest);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            padding: 0.3rem 0.8rem;
+            border-radius: 8px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--ocean-blue);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 80%;
+        }
+
+        .nav-links a:hover {
+            color: var(--ocean-blue);
+            background: rgba(0, 107, 159, 0.08);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Slideshow Section */
+        .hero-slideshow {
+            margin-top: 70px;
+            width: 100%;
+            height: 100vh;
+            min-height: 600px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slideshow-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: scale(1);
+            z-index: 1;
+        }
+
+        .slide:hover {
+            transform: scale(1.02);
+        }
+
+        .slide.active:hover {
+            transform: scale(1.02);
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.7) 0%,
+                rgba(0, 0, 0, 0.3) 50%,
+                transparent 100%
+            );
+            z-index: 1;
+        }
+
+        .slide-content {
+            position: absolute;
+            bottom: 8%;
+            left: 5%;
+            text-align: left;
+            color: white;
+            z-index: 2;
+            max-width: 600px;
+            opacity: 0;
+            animation: none;
+            padding: 0 2rem;
+        }
+
+        .slide.active .slide-content {
+            animation: slideContentIn 1.2s ease-out 0.6s forwards;
+        }
+
+        @keyframes slideContentIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-content h2 {
+            font-size: 3.5rem;
+            font-family: 'Crimson Pro', serif;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .slide-content p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        /* Navigation Arrows - Invisible borders */
+        .slide-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            color: white;
+            border: none;
+            font-size: 3rem;
+            padding: 2rem 1.5rem;
+            cursor: pointer;
+            z-index: 3;
+            transition: all 0.3s;
+            opacity: 0.4;
+            font-weight: 300;
+        }
+
+        .slide-nav:hover {
+            opacity: 1;
+            transform: translateY(-50%) scale(1.2);
+        }
+
+        .slide-nav.prev {
+            left: 1rem;
+        }
+
+        .slide-nav.next {
+            right: 1rem;
+        }
+
+        /* Dots Navigation - More subtle */
+        .slide-dots {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.8rem;
+            z-index: 3;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.4s;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .dot:hover {
+            background: rgba(255, 255, 255, 0.8);
+            transform: scale(1.3);
+            border-color: white;
+        }
+
+        .dot.active {
+            background: white;
+            transform: scale(1.2);
+            border-color: white;
+        }
+
+        /* Responsive Slideshow */
+        @media (max-width: 968px) {
+            .hero-slideshow {
+                height: 80vh;
+                min-height: 500px;
+                margin-top: 100px;
+            }
+
+            .slide-content {
+                bottom: 6%;
+                left: 3%;
+                max-width: 90%;
+                padding: 0 1rem;
+            }
+
+            .slide-content h2 {
+                font-size: 2.2rem;
+            }
+
+            .slide-content p {
+                font-size: 1.1rem;
+            }
+
+            .slide-nav {
+                padding: 1.5rem 1rem;
+                font-size: 2rem;
+                opacity: 0.6;
+            }
+
+            .slide-nav.prev {
+                left: 0.5rem;
+            }
+
+            .slide-nav.next {
+                right: 0.5rem;
+            }
+
+            .slide-dots {
+                bottom: 2rem;
+            }
+
+            .dot {
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-slideshow {
+                height: 70vh;
+                min-height: 400px;
+                margin-top: 80px;
+            }
+
+            .slide-content {
+                bottom: 5%;
+                left: 2%;
+                max-width: 85%;
+                padding: 0 0.5rem;
+            }
+
+            .slide-content h2 {
+                font-size: 1.8rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .slide-content p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+
+            .slide-nav {
+                padding: 1rem 0.8rem;
+                font-size: 1.8rem;
+                opacity: 0.5;
+            }
+
+            .dot {
+                width: 8px;
+                height: 8px;
+            }
+
+            .slide-dots {
+                bottom: 1.5rem;
+                gap: 0.6rem;
+            }
+        }
+
+        /* Landscape mobile */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .hero-slideshow {
+                height: 100vh;
+                margin-top: 80px;
+            }
+
+            .slide-content {
+                bottom: 4%;
+            }
+
+            .slide-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .slide-content p {
+                font-size: 0.9rem;
+            }
+
+            .slide-dots {
+                bottom: 1rem;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 0;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--cream) 100%);
+            position: relative;
+            overflow: visible;
+            padding: 3rem 0 5rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -15%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 107, 159, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float-rotate 25s infinite ease-in-out;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 107, 107, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float-rotate-reverse 30s infinite ease-in-out;
+        }
+
+        @keyframes float-rotate {
+            0%, 100% { 
+                transform: translate(0, 0) rotate(0deg) scale(1); 
+                opacity: 1;
+            }
+            25% { 
+                transform: translate(-30px, 40px) rotate(90deg) scale(1.1); 
+                opacity: 0.8;
+            }
+            50% { 
+                transform: translate(20px, -30px) rotate(180deg) scale(0.9); 
+                opacity: 1;
+            }
+            75% { 
+                transform: translate(-40px, 20px) rotate(270deg) scale(1.05); 
+                opacity: 0.9;
+            }
+        }
+
+        @keyframes float-rotate-reverse {
+            0%, 100% { 
+                transform: translate(0, 0) rotate(360deg) scale(1); 
+                opacity: 0.8;
+            }
+            33% { 
+                transform: translate(40px, -30px) rotate(240deg) scale(1.1); 
+                opacity: 1;
+            }
+            66% { 
+                transform: translate(-30px, 40px) rotate(120deg) scale(0.95); 
+                opacity: 0.9;
+            }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            animation: fadeInLeft 1s ease-out;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--ocean-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-highlight {
+            color: var(--coral);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--ocean-grey);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--ocean-blue);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 107, 159, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--deep-ocean);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 107, 159, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--ocean-blue);
+            border: 2px solid var(--ocean-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--ocean-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            position: relative;
+            animation: fadeInRight 1s ease-out;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .computer-illustration {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, var(--ocean-blue) 0%, var(--deep-ocean) 100%);
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 107, 159, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            animation: glow-pulse 4s infinite ease-in-out;
+            margin-bottom: 2rem;
+        }
+
+        @keyframes glow-pulse {
+            0%, 100% {
+                box-shadow: 0 20px 60px rgba(0, 107, 159, 0.3);
+            }
+            50% {
+                box-shadow: 0 20px 80px rgba(0, 107, 159, 0.5), 
+                            0 0 40px rgba(74, 159, 216, 0.3);
+            }
+        }
+
+        .computer-illustration::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.1) 50%,
+                transparent 70%
+            );
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        .computer-illustration .icon-display {
+            font-size: 8rem;
+            opacity: 0.3;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 700;
+            color: white;
+            transition: opacity 0.5s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .impact-stats {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 1.5rem 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 107, 159, 0.15);
+            display: flex;
+            gap: 3rem;
+            border-top: 4px solid var(--coral);
+            z-index: 100;
+            max-width: 90%;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--ocean-blue);
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--ocean-grey);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--ocean-blue);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--ocean-grey);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Mission Section */
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .mission-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--sky-blue);
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .mission-card:nth-child(1) { 
+            animation-delay: 0.1s;
+            border-top-color: var(--ocean-blue);
+        }
+        .mission-card:nth-child(2) { 
+            animation-delay: 0.2s;
+            border-top-color: var(--coral);
+        }
+        .mission-card:nth-child(3) { 
+            animation-delay: 0.3s;
+            border-top-color: var(--seafoam);
+        }
+
+        .mission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 107, 159, 0.15);
+        }
+
+        .mission-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-card h3 {
+            font-size: 1.5rem;
+            color: var(--ocean-blue);
+            margin-bottom: 1rem;
+        }
+
+        .mission-card p {
+            color: var(--ocean-grey);
+        }
+
+        /* Donation Section */
+        .donation-section {
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--cream) 100%);
+            border-radius: 30px;
+            padding: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .donation-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--ocean-blue), var(--sky-blue), var(--coral));
+            animation: gradient-shift 3s infinite ease-in-out;
+        }
+
+        .donation-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 107, 107, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float-gentle 15s infinite ease-in-out;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes float-gentle {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(-20px, 20px);
+            }
+        }
+
+        .donation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .donation-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .donation-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid var(--coral);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .donation-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 107, 159, 0.15);
+            border-left-color: var(--ocean-blue);
+        }
+
+        .donation-card h3 {
+            color: var(--ocean-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .donation-info {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 107, 159, 0.1);
+        }
+
+        .donation-info h3 {
+            color: var(--ocean-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .donation-info ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .donation-info li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--ocean-grey);
+        }
+
+        .donation-info li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--seafoam);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Impact Section */
+        .impact-section {
+            background: var(--ocean-blue);
+            color: white;
+            border-radius: 30px;
+            padding: 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 40%,
+                rgba(255, 255, 255, 0.03) 50%,
+                transparent 60%
+            );
+            animation: shimmer-slow 6s infinite;
+        }
+
+        @keyframes shimmer-slow {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
+        }
+
+        .impact-section h2 {
+            color: white;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .impact-numbers {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .impact-item {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            transition: all 0.3s;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .impact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+            border-color: var(--coral);
+        }
+
+        .impact-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--coral);
+            font-family: 'Crimson Pro', serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Stories & Gallery Section */
+        .stories-section {
+            background: var(--light-blue);
+            border-radius: 30px;
+            padding: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stories-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(74, 159, 216, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: bob 8s infinite ease-in-out;
+        }
+
+        @keyframes bob {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .story-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 107, 159, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--coral);
+        }
+
+        .story-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 107, 159, 0.2);
+        }
+
+        .story-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--ocean-blue), var(--sky-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            opacity: 0.3;
+        }
+
+        @media (max-width: 480px) {
+            .story-image {
+                height: 200px;
+                font-size: 3rem;
+            }
+        }
+
+        .story-content {
+            padding: 2rem;
+        }
+
+        .story-date {
+            color: var(--coral);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .story-card h3 {
+            color: var(--ocean-blue);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .story-card p {
+            color: var(--ocean-grey);
+            line-height: 1.8;
+        }
+
+        .story-placeholder {
+            text-align: center;
+            padding: 3rem;
+            background: white;
+            border-radius: 15px;
+            border: 2px dashed var(--sky-blue);
+        }
+
+        .story-placeholder h3 {
+            color: var(--ocean-blue);
+            margin-bottom: 1rem;
+        }
+
+        .story-placeholder p {
+            color: var(--ocean-grey);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: white;
+            border-radius: 30px;
+            padding: 4rem;
+            box-shadow: 0 10px 40px rgba(0, 107, 159, 0.08);
+            border-top: 5px solid var(--ocean-blue);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            color: var(--ocean-blue);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-radius: 10px;
+            transition: background 0.3s;
+        }
+
+        .contact-item:hover {
+            background: var(--light-blue);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--coral);
+            min-width: 30px;
+        }
+
+        .contact-details h4 {
+            color: var(--ocean-blue);
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-details p {
+            color: var(--ocean-grey);
+        }
+
+        .contact-details a {
+            color: var(--ocean-blue);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-details a:hover {
+            color: var(--coral);
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background: var(--light-blue);
+            padding: 2.5rem;
+            border-radius: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--ocean-blue);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            background: white;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--ocean-blue);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--deep-ocean);
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-about h3 {
+            color: var(--coral);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .footer-about p {
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .footer-links h4 {
+            color: var(--coral);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--coral);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            nav {
+                padding: 0.8rem 0;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+                padding: 0 1rem;
+                gap: 0.8rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+
+            .hero-slideshow {
+                margin-top: 70px;
+            }
+
+            .hero {
+                min-height: 50vh;
+                padding: 2rem 0;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .computer-illustration {
+                height: 250px;
+            }
+
+            .icon-display {
+                font-size: 5rem !important;
+            }
+
+            .impact-stats {
+                position: static;
+                transform: none;
+                margin-top: 2rem;
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 2rem;
+                max-width: 100%;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+
+            .stat-label {
+                font-size: 0.85rem;
+            }
+
+            .mission-grid,
+            .impact-numbers,
+            .stories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .donation-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .donation-section,
+            .stories-section,
+            .impact-section,
+            .contact-section {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .section-header p {
+                font-size: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* Small Mobile Devices */
+        @media (max-width: 480px) {
+            nav {
+                padding: 0.6rem 0;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .nav-links a {
+                font-size: 0.75rem;
+                padding: 0.3rem 0.6rem;
+            }
+
+            .hero-slideshow {
+                margin-top: 65px;
+            }
+            .hero {
+                min-height: 40vh;
+            }
+
+            .nav-links {
+                top: 80px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .mission-card,
+            .donation-card,
+            .story-card {
+                padding: 1.5rem;
+            }
+
+            .donation-section,
+            .stories-section,
+            .impact-section,
+            .contact-section {
+                padding: 2rem 1rem;
+                border-radius: 20px;
+            }
+
+            .impact-numbers {
+                gap: 1rem;
+            }
+
+            .impact-number {
+                font-size: 2.5rem;
+            }
+
+            .computer-illustration {
+                height: 200px;
+            }
+
+            .icon-display {
+                font-size: 4rem !important;
+            }
+
+            .floating-circle {
+                opacity: 0.3;
+            }
+
+            .stories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Tablet Landscape */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero {
+                padding: 3rem 0 6rem 0;
+            }
+
+            .hero-content {
+                gap: 3rem;
+            }
+
+            .impact-stats {
+                padding: 1.2rem 2rem;
+                gap: 2rem;
+                max-width: 85%;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+
+            .mission-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .impact-numbers {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Laptop Screens */
+        @media (min-width: 1025px) and (max-width: 1399px) {
+            .hero {
+                padding: 3rem 0 5rem 0;
+                margin-bottom: 3rem;
+            }
+
+            .impact-stats {
+                bottom: -40px;
+                padding: 1.5rem 2.5rem;
+                gap: 2.5rem;
+                max-width: 85%;
+            }
+
+            .computer-illustration {
+                height: 320px;
+            }
+        }
+
+        /* Large Screens */
+        @media (min-width: 1400px) {
+            .hero {
+                padding: 4rem 0 6rem 0;
+                margin-bottom: 4rem;
+            }
+
+            .hero-content,
+            section,
+            .nav-container,
+            .footer-content {
+                max-width: 1400px;
+            }
+
+            .hero h1 {
+                font-size: 4rem;
+            }
+
+            .section-header h2 {
+                font-size: 3.5rem;
+            }
+
+            .impact-stats {
+                padding: 2rem 4rem;
+                gap: 4rem;
+            }
+
+            .computer-illustration {
+                height: 400px;
+            }
+        }
+
+        /* Handle very small heights (landscape phones) */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .hero {
+                min-height: auto;
+                padding: 2rem 0;
+            }
+
+            .computer-illustration {
+                height: 200px;
+            }
+
+            .nav-container {
+                padding: 0.5rem 1rem;
+            }
+
+            .nav-links {
+                padding: 1rem;
+                gap: 0.8rem;
+            }
+        }
+
+        /* Ensure text is readable on all devices */
+        @media (max-width: 968px) {
+            body {
+                font-size: 16px;
+            }
+
+            h1 {
+                line-height: 1.2;
+            }
+
+            h2 {
+                line-height: 1.3;
+            }
+
+            h3 {
+                line-height: 1.3;
+            }
+        }
+
+        /* Fix animations on mobile for better performance */
+        @media (max-width: 768px) {
+            .floating-circle {
+                animation-duration: 30s;
+            }
+
+            .particle {
+                display: none; /* Hide particles on mobile for performance */
+            }
+
+            .wave {
+                animation-duration: 20s;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Accessibility */
+        .btn:focus,
+        input:focus,
+        textarea:focus {
+            outline: 3px solid var(--sky-blue);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <!-- Wave Animation -->
+    <div class="wave-container">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <!-- Menu Backdrop -->
+    <div class="menu-backdrop" id="menuBackdrop"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <!-- Floating Icons -->
+        <div class="nav-icon">💻</div>
+        <div class="nav-icon">🎓</div>
+        <div class="nav-icon">🌍</div>
+        
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <!-- 
+                    TO ADD YOUR LOGO:
+                    1. Save your logo image in the same folder as this HTML file
+                    2. Name it "logo.png" (or .jpg, .svg)
+                    3. Uncomment the line below and update the filename
+                    4. Add class "active" to make it visible
+                -->
+                <!-- <img src="logo.png" alt="Donate a Computer Kenya Logo" class="logo-image active"> -->
+                <span>Donate a Computer</span>
+            </a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#mission">Our Mission</a></li>
+                <li><a href="#donate">Donate</a></li>
+                <li><a href="#stories">Our Stories</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Slideshow Section -->
+    <section class="hero-slideshow">
+        <div class="slideshow-container">
+            <!-- Slide 1 -->
+            <div class="slide active" onclick="goToStories()">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1920&q=80" alt="Students learning with computers">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h2>Empowering Education Through Technology</h2>
+                    <p>Bringing digital literacy to communities across Kilifi County</p>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="slide" onclick="goToStories()">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1920&q=80" alt="Community digital training">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h2>Building Digital Skills for Tomorrow</h2>
+                    <p>Training programs that transform lives and create opportunities</p>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="slide" onclick="goToStories()">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80" alt="Youth learning together">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h2>Creating Equal Opportunities</h2>
+                    <p>Every donation brings us closer to bridging the digital divide</p>
+                </div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="slide" onclick="goToStories()">
+                <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=1920&q=80" alt="Computer education">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h2>Technology Opens Doors</h2>
+                    <p>From basic computer skills to advanced digital competencies</p>
+                </div>
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button class="slide-nav prev" onclick="event.stopPropagation(); changeSlide(-1)">❮</button>
+            <button class="slide-nav next" onclick="event.stopPropagation(); changeSlide(1)">❯</button>
+
+            <!-- Dots -->
+            <div class="slide-dots">
+                <span class="dot active" onclick="event.stopPropagation(); currentSlide(0)"></span>
+                <span class="dot" onclick="event.stopPropagation(); currentSlide(1)"></span>
+                <span class="dot" onclick="event.stopPropagation(); currentSlide(2)"></span>
+                <span class="dot" onclick="event.stopPropagation(); currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Bridging the <span class="hero-highlight">Digital Divide</span> in Kilifi</h1>
+                <p>To equip underserved communities in Kenya with computers and digital skills that unlock opportunity, dignity, and economic independence.</p>
+                <div class="cta-buttons">
+                    <a href="#donate" class="btn btn-primary">Donate Now</a>
+                    <a href="#mission" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="computer-illustration">
+                    <div class="icon-display" id="iconDisplay">💻</div>
+                </div>
+                <div class="impact-stats">
+                    <div class="stat">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Students Reached</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Schools Helped</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission">
+        <div class="section-header">
+            <h2>Our Mission</h2>
+            <p>Creating digitally empowered communities in Kilifi where every individual has access to technology and digital opportunities</p>
+        </div>
+        <div class="mission-grid">
+            <div class="mission-card">
+                <div class="mission-icon">🎓</div>
+                <h3>Digital Literacy Training</h3>
+                <p>We provide practical digital skills training to youth and vulnerable groups, teaching essential skills like computer literacy, internet use, and Microsoft Office.</p>
+            </div>
+            <div class="mission-card">
+                <div class="mission-icon">🌱</div>
+                <h3>Community Empowerment</h3>
+                <p>We promote access to technology in rural and low-income areas of Kilifi, partnering with organizations, schools, and institutions to enhance digital education.</p>
+            </div>
+            <div class="mission-card">
+                <div class="mission-icon">♻️</div>
+                <h3>Collect & Distribute</h3>
+                <p>We collect donated computers and ICT equipment, refurbishing them and distributing to underserved communities across Kilifi County.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donate">
+        <div class="donation-section">
+            <div class="section-header">
+                <h2>How You Can Help</h2>
+                <p>Your contribution makes a real difference in our community</p>
+            </div>
+            <div class="donation-grid">
+                <div class="donation-options">
+                    <div class="donation-card">
+                        <h3>💻 Donate Computers</h3>
+                        <p>Have working computers, laptops, or tablets? We'll put them to good use in schools and community centers across Kilifi.</p>
+                    </div>
+                    <div class="donation-card">
+                        <h3>💰 Monetary Donations</h3>
+                        <p>Financial contributions help us refurbish computers, cover operational costs, and expand our digital literacy programs.</p>
+                    </div>
+                    <div class="donation-card">
+                        <h3>🤝 Volunteer</h3>
+                        <p>Share your time and expertise. Help with computer setup, teaching digital skills, or administrative support.</p>
+                    </div>
+                </div>
+                <div class="donation-info">
+                    <h3>What We Accept</h3>
+                    <ul>
+                        <li>Desktop computers (working condition)</li>
+                        <li>Laptops and notebooks</li>
+                        <li>Tablets and accessories</li>
+                        <li>Monitors and keyboards</li>
+                        <li>Computer mice and peripherals</li>
+                        <li>Microphones and audio equipment</li>
+                        <li>Raspberry Pi and similar devices</li>
+                        <li>Educational software</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center;">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stories & Gallery Section -->
+    <section id="stories">
+        <div class="stories-section">
+            <div class="section-header">
+                <h2>Our Stories</h2>
+                <p>Real impact, real people, real change in Kilifi County</p>
+            </div>
+            
+            <!-- 
+                HOW TO ADD YOUR STORIES & PHOTOS:
+                
+                1. SAVE YOUR PHOTOS:
+                   - Put your photos in the same folder as this HTML file
+                   - Name them clearly (e.g., "school-donation-2024.jpg")
+                
+                2. COPY THE STORY CARD TEMPLATE BELOW:
+                   - Copy from <div class="story-card"> to </div>
+                   - Paste it after the last story card
+                
+                3. EDIT THE NEW CARD:
+                   - Change the photo: Update src="your-photo.jpg"
+                   - Change the date
+                   - Change the title in <h3>
+                   - Change the story text in <p>
+                
+                4. EXAMPLE TEMPLATE TO COPY:
+                
+                <div class="story-card">
+                    <img src="your-photo.jpg" alt="Description" class="story-image">
+                    <div class="story-content">
+                        <div class="story-date">January 2026</div>
+                        <h3>Your Story Title</h3>
+                        <p>Your story text goes here. Tell the story of what happened, who was helped, and what impact it made.</p>
+                    </div>
+                </div>
+            -->
+            
+            <div class="stories-grid">
+                
+                <!-- EXAMPLE STORY 1 - Replace with your real story -->
+                <div class="story-card">
+                    <div class="story-image">📚</div>
+                    <div class="story-content">
+                        <div class="story-date">January 2026</div>
+                        <h3>First Computer Lab at Kilifi Primary</h3>
+                        <p>We donated 15 computers to Kilifi Primary School, creating their first ever computer lab. Now 300 students can learn digital skills that will open doors to their future.</p>
+                    </div>
+                </div>
+
+                <!-- EXAMPLE STORY 2 - Replace with your real story -->
+                <div class="story-card">
+                    <div class="story-image">👩‍💻</div>
+                    <div class="story-content">
+                        <div class="story-date">December 2025</div>
+                        <h3>Digital Skills Training in Gede</h3>
+                        <p>50 youth from Gede community completed our 3-month digital literacy program. They learned Microsoft Office, internet skills, and basic coding - tools for employment.</p>
+                    </div>
+                </div>
+
+                <!-- EXAMPLE STORY 3 - Replace with your real story -->
+                <div class="story-card">
+                    <div class="story-image">🎓</div>
+                    <div class="story-content">
+                        <div class="story-date">November 2025</div>
+                        <h3>Partnership with Kilifi Institute</h3>
+                        <p>Partnered with Kilifi Institute of Agriculture to refurbish 20 donated laptops. Students gained hands-on experience while preparing computers for distribution.</p>
+                    </div>
+                </div>
+
+                <!-- ADD YOUR NEW STORIES BELOW THIS LINE -->
+                <!-- Copy the template from the instructions above -->
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact">
+        <div class="impact-section">
+            <h2>Our Impact in Numbers</h2>
+            <div class="impact-numbers">
+                <div class="impact-item">
+                    <div class="impact-number">500+</div>
+                    <div class="impact-label">Students Empowered</div>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-number">250</div>
+                    <div class="impact-label">Computers Donated</div>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-number">15</div>
+                    <div class="impact-label">Partner Schools</div>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-number">50+</div>
+                    <div class="impact-label">Training Sessions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-section">
+            <div class="section-header">
+                <h2>Get in Touch</h2>
+                <p>We'd love to hear from you. Reach out to donate, volunteer, or learn more.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p><a href="/cdn-cgi/l/email-protection#72361d1c13061713111d1f0207061700191732151f131b1e5c111d1f"><span class="__cf_email__" data-cfemail="72361d1c13061713111d1f0207061700191732151f131b1e5c111d1f">[email&#160;protected]</span></a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+254700000000">+254 700 000 000</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Kilifi County, Kenya</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🌐</div>
+                        <div class="contact-details">
+                            <h4>Social Media</h4>
+                            <p>
+                                <a href="https://www.facebook.com/profile.php?id=61587792557646" target="_blank" rel="noopener noreferrer" style="margin-right: 1rem;">Facebook</a>
+                                <a href="https://www.instagram.com/donateacomputerke/" target="_blank" rel="noopener noreferrer" style="margin-right: 1rem;">Instagram</a>
+                                <a href="https://www.tiktok.com/@donateacomputerke?lang=en" target="_blank" rel="noopener noreferrer">TikTok</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>Donate a Computer Kenya</h3>
+                <p>A community-based organization dedicated to bridging the digital divide in Kilifi County through computer donations and digital literacy programs.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#mission">Our Mission</a></li>
+                    <li><a href="#donate">How to Donate</a></li>
+                    <li><a href="#impact">Our Impact</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.facebook.com/profile.php?id=61587792557646" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/donateacomputerke/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://www.tiktok.com/@donateacomputerke?lang=en" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Donate a Computer Kenya - Kilifi County. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Navigate to Stories section
+        function goToStories() {
+            const storiesSection = document.getElementById('stories');
+            if (storiesSection) {
+                storiesSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Slideshow functionality
+        let slideIndex = 0;
+        let slides = [];
+        let dots = [];
+        let slideInterval;
+
+        function initSlideshow() {
+            slides = document.querySelectorAll('.slide');
+            dots = document.querySelectorAll('.dot');
+            
+            if (slides.length > 0) {
+                // Make sure first slide is visible
+                slides[0].classList.add('active');
+                if (dots[0]) {
+                    dots[0].classList.add('active');
+                }
+                startAutoSlide();
+            }
+        }
+
+        function showSlide(n) {
+            if (slides.length === 0) return;
+
+            // Handle wraparound
+            if (n >= slides.length) {
+                slideIndex = 0;
+            }
+            if (n < 0) {
+                slideIndex = slides.length - 1;
+            }
+
+            // Remove active class from all slides and dots
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active');
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove('active');
+            }
+
+            // Add active class to current slide and dot
+            slides[slideIndex].classList.add('active');
+            if (dots[slideIndex]) {
+                dots[slideIndex].classList.add('active');
+            }
+        }
+
+        function changeSlide(n) {
+            stopAutoSlide();
+            slideIndex += n;
+            showSlide(slideIndex);
+            startAutoSlide();
+        }
+
+        function currentSlide(n) {
+            stopAutoSlide();
+            slideIndex = n;
+            showSlide(slideIndex);
+            startAutoSlide();
+        }
+
+        function startAutoSlide() {
+            stopAutoSlide(); // Clear any existing
+            slideInterval = setInterval(() => {
+                slideIndex++;
+                showSlide(slideIndex);
+            }, 5000);
+        }
+
+        function stopAutoSlide() {
+            if (slideInterval) {
+                clearInterval(slideInterval);
+            }
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initSlideshow);
+        } else {
+            initSlideshow();
+        }
+
+        // Mobile menu toggle (removed as no longer needed)
+        const navLinks = document.getElementById('navLinks');
+        const menuBackdrop = document.getElementById('menuBackdrop');
+
+        function toggleMenu() {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            menuBackdrop.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (navLinks.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+
+        function closeMenu() {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            menuBackdrop.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking backdrop
+        menuBackdrop.addEventListener('click', closeMenu);
+
+        // Close menu when clicking on a link
+        const navItems = navLinks.querySelectorAll('a');
+        navItems.forEach(item => {
+            item.addEventListener('click', closeMenu);
+        });
+
+        // Close menu when clicking outside (kept for additional safety)
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navLinks.contains(event.target);
+            const isClickOnToggle = menuToggle.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnToggle && navLinks.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+
+        // Computer parts animation
+        const icons = [
+            { content: '💻', size: '8rem' },
+            { content: '⌨️', size: '8rem' },
+            { content: '🖱️', size: '8rem' },
+            { content: '🖥️', size: '8rem' },
+            { content: '🖨️', size: '8rem' },
+            { content: 'Raspberry Pi', size: '3rem' },
+            { content: 'IoT Devices', size: '3rem' }
+        ];
+        
+        let currentIndex = 0;
+        const iconDisplay = document.getElementById('iconDisplay');
+        
+        function cycleIcons() {
+            if (iconDisplay) {
+                currentIndex = (currentIndex + 1) % icons.length;
+                const currentIcon = icons[currentIndex];
+                iconDisplay.textContent = currentIcon.content;
+                iconDisplay.style.fontSize = currentIcon.size;
+            }
+        }
+        
+        // Change icon every 2 seconds
+        setInterval(cycleIcons, 2000);
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            event.target.reset();
+        }
+
+        // Add scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.mission-card, .donation-card, .impact-item').forEa
